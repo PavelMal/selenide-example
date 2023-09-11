@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'com.codeborne:selenide:6.18.0'
+    testImplementation 'org.testng:testng:7.6.1'
+    implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.24.0'
+
+
+
+}
+
+test {
+    ignoreFailures = true
+    useTestNG {
+        systemProperties(System.getProperties())
+    }
+}
