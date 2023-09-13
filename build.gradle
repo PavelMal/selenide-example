@@ -10,14 +10,9 @@ repositories {
 }
 
 dependencies {
-//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    testImplementation 'com.codeborne:selenide:6.18.0'
-    testImplementation 'org.testng:testng:7.6.1'
+    implementation 'com.codeborne:selenide:6.18.0'
+    implementation 'org.testng:testng:7.6.1'
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.24.0'
-
-
-
 }
 
 test {
