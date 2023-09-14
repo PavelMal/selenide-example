@@ -5,7 +5,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainPage {
+public class MainSearchingPage {
 
     private final SelenideElement searching = $("[id=\"text\"]");
 
