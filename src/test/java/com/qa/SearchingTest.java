@@ -12,7 +12,7 @@ public class SearchingTest {
     @Test(description = "Searching by 'PavelMal github'")
     public void searchByText() {
         open("https://yandex.com/");
-        mainPage.search("PavelMal github");
+        mainPage.searchByText("PavelMal github");
 
         Selenide.sleep(10000);
     }
