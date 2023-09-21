@@ -26,12 +26,12 @@ public class MainSearchingPage {
     }
 
     @Step("Weather info should be {condition}")
-    private void weatherInfoShouldBe(Condition condition) {
+    public void weatherInfoShouldBe(Condition condition) {
         weatherInfo.shouldBe(condition);
     }
 
     @Step("Headline logo should be {condition}")
-    private void headlineLogoShouldBe(Condition condition) {
+    public void headlineLogoShouldBe(Condition condition) {
         headlineLogo.shouldBe(condition);
     }
 }
