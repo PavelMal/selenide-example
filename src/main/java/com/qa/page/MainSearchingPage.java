@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainSearchingPage {
 
     private final Searching searching = new Searching();
-    private final SelenideElement loginButton = $("[data-statlog=\"headline.enter\"]");
+    private final SelenideElement loginButton = $("[class=\"home-link2 headline__personal-enter headline__personal-enter home-link2_color_black\"]");
     private final SelenideElement weatherInfo = $("[data-statlog=\"informers.weather\"]");
     private final SelenideElement headlineLogo = $("[class=\"home-link2 headline__logo\"]");
 
