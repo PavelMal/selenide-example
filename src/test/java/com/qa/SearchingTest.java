@@ -1,6 +1,5 @@
 package com.qa;
 
-import com.codeborne.selenide.Selenide;
 import com.qa.page.MainSearchingPage;
 import com.qa.page.SearchedResultPage;
 import org.testng.annotations.Test;
