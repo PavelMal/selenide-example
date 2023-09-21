@@ -12,7 +12,7 @@ public class MainSearchingPage {
     private final Searching searching = new Searching();
     private final SelenideElement loginButton = $("[data-statlog=\"headline.enter\"]");
     private final SelenideElement weatherInfo = $("[data-statlog=\"informers.weather\"]");
-    private final SelenideElement headlineLogo = $("[data-statlog=\"headline.logo\"]");
+    private final SelenideElement headlineLogo = $("[class=\"home-link2 headline__logo\"]");
 
     @Step("Input text into searching: {text}")
     public void searchByText(String text) {

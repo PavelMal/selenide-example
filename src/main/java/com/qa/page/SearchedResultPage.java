@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.partialTextCaseSensitive;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -21,5 +22,10 @@ public class SearchedResultPage {
     @Step("Amount of searched items is greater than 1")
     public void checkAmountSearchedItemsGreaterThatOne() {
         searchedItems.shouldBe(sizeGreaterThan(1));
+    }
+
+    @Step("First item should contain text: {text}")
+    public void firstSearchedItemShouldContainText(String text){
+        searchedItems.get(0).shouldHave(partialTextCaseSensitive(text));
     }
 }

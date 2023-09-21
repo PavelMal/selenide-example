@@ -2,6 +2,7 @@ package com.qa;
 
 import com.codeborne.selenide.Selenide;
 import com.qa.page.MainSearchingPage;
+import com.qa.page.SearchedResultPage;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -9,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SearchingTest {
     private final MainSearchingPage mainPage = new MainSearchingPage();
+    private final SearchedResultPage searchedResultPage = new SearchedResultPage();
 
     @Test(description = "Searching by 'PavelMal github'")
     public void searchByText() {
@@ -17,6 +19,7 @@ public class SearchingTest {
 
         mainPage.searchByText("PavelMal github");
 
-        Selenide.sleep(10000);
+        searchedResultPage.checkAmountSearchedItemsGreaterThatOne();
+        searchedResultPage.firstSearchedItemShouldContainText("PavelMal (Pavel) · GitHub");
     }
 }
