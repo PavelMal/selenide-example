@@ -27,6 +27,10 @@ public class MainSearchingPage {
         searching.clearDataInSearching();
     }
 
+    public void checkTextInSearching(String text) {
+        searching.checkTextInSearching(text);
+    }
+
     @Step("Click on login button")
     public void clickOnLogIn() {
         loginButton.click();

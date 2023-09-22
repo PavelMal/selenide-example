@@ -21,10 +21,8 @@ public class SearchingTest extends BaseTest{
         mainPage.headlineLogoShouldBe(visible);
 
         mainPage.inputText("PavelMal github");
-        mainPage.
+        mainPage.checkTextInSearching("PavelMal github");
         mainPage.clearData();
-
-        searchedResultPage.checkAmountSearchedItemsGreaterThatOne();
-        searchedResultPage.firstSearchedItemShouldContainText("PavelMal (Pavel) · GitHub");
+        mainPage.checkTextInSearching("");
     }
 }

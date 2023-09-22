@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.textCaseSensitive;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
 
 public class Searching {
@@ -33,5 +35,8 @@ public class Searching {
         clearData.click();
     }
 
-    @Step("")
+    @Step("Check text in searching field: {text}")
+    public void checkTextInSearching(String text) {
+        textInput.shouldHave(value(text));
+    }
 }
