@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.textCaseSensitive;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
 
 public class Searching {
@@ -11,6 +13,7 @@ public class Searching {
     private final SelenideElement searching = $("[class=\"search3__inner\"]");
     private final SelenideElement textInput = $("[id=\"text\"]");
     private final SelenideElement findButton = $("[class=\"search3__button mini-suggest__button\"]");
+    private final SelenideElement clearData = $("[class=\"search3__action search3__clear mini-suggest__input-clear\"]");
 
     @Step("Input text to search: {text}")
     public void inputTextToSearch(String text) {
@@ -25,5 +28,15 @@ public class Searching {
     @Step("Searching element should be: {condition}")
     public void searchingElementShouldBe(Condition condition) {
         searching.shouldBe(condition);
+    }
+
+    @Step("Clear data in searching field")
+    public void clearDataInSearching() {
+        clearData.click();
+    }
+
+    @Step("Check text in searching field: {text}")
+    public void checkTextInSearching(String text) {
+        textInput.shouldHave(value(text));
     }
 }
