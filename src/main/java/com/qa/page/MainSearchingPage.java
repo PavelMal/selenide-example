@@ -14,10 +14,17 @@ public class MainSearchingPage {
     private final SelenideElement weatherInfo = $("[data-statlog=\"informers.weather\"]");
     private final SelenideElement headlineLogo = $("[class=\"home-link2 headline__logo\"]");
 
-    @Step("Input text into searching: {text}")
     public void searchByText(String text) {
         searching.inputTextToSearch(text);
         searching.clickOnFindButton();
+    }
+
+    public void inputText(String text) {
+        searching.inputTextToSearch(text);
+    }
+
+    public void clearData() {
+        searching.clearDataInSearching();
     }
 
     @Step("Click on login button")

@@ -32,4 +32,6 @@ public class Searching {
     public void clearDataInSearching() {
         clearData.click();
     }
+
+    @Step("")
 }
