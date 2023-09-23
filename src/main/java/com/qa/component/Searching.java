@@ -14,6 +14,7 @@ public class Searching {
     private final SelenideElement textInput = $("[id=\"text\"]");
     private final SelenideElement findButton = $("[class=\"search3__button mini-suggest__button\"]");
     private final SelenideElement clearData = $("[class=\"search3__action search3__clear mini-suggest__input-clear\"]");
+    private final SelenideElement popUpSearching = $("[class=\"mini-suggest__popup-content\"]");
 
     @Step("Input text to search: {text}")
     public void inputTextToSearch(String text) {
@@ -28,6 +29,11 @@ public class Searching {
     @Step("Searching element should be: {condition}")
     public void searchingElementShouldBe(Condition condition) {
         searching.shouldBe(condition);
+    }
+
+    @Step("Pop up wit suggested content should be: {condition}")
+    public void popUpContentShouldBe(Condition condition) {
+        popUpSearching.shouldBe(condition);
     }
 
     @Step("Clear data in searching field")

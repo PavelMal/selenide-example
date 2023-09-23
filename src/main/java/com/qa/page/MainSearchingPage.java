@@ -31,6 +31,10 @@ public class MainSearchingPage {
         searching.checkTextInSearching(text);
     }
 
+    public void popupContentShouldBe(Condition condition) {
+        searching.popUpContentShouldBe(condition);
+    }
+
     @Step("Click on login button")
     public void clickOnLogIn() {
         loginButton.click();
