@@ -4,6 +4,6 @@ This is an example of using the Selenide framework and showcasing tests using th
 You can run tests in parallel by adding param `-Psuite="Parallel"`also you can configure thread amount by adding param `-Pthreads="2"` into 'arguments'.
 
 In case of no additional params tests will start with default configuration (`single` thread with a `single` suite).
-Also added params `-PbaseUrl` for example:
+Also, you can add a param `-PbaseUrl` to change a start URL for example:
 
 - `-PbaseUrl="google.com"`
