@@ -17,7 +17,7 @@ public class BaseTest {
 
     @BeforeTest
     public void setUpBaseURL() {
-        open("https://yandex.com/");
+        open(System.getProperty("baseUrl"));
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 }
