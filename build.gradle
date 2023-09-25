@@ -20,6 +20,10 @@ def baseUrl = project.hasProperty('baseUrl') ? project.getProperty('baseUrl') : 
 def threads = project.hasProperty('threads') ? project.getProperty('threads') : 1
 def suite = project.hasProperty("suite") ? project.getProperty('suite') : "Single"
 
+if (suite.equalsIgnoreCase("Parallel")) {
+    threads = 2
+}
+
 test {
     systemProperty 'threads', threads
     systemProperty 'suite', suite
