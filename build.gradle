@@ -16,9 +16,19 @@ dependencies {
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.24.0'
 }
 
+def baseUrl = project.hasProperty('baseUrl') ? project.getProperty('baseUrl') : "https://yandex.com/"
+def threads = project.hasProperty('threads') ? project.getProperty('threads') : 1
+def suite = project.hasProperty("suite") ? project.getProperty('suite') : "Single"
+
 test {
+    systemProperty 'threads', threads
+    systemProperty 'suite', suite
+    systemProperty 'baseUrl', baseUrl
+
     ignoreFailures = true
     useTestNG {
         systemProperties(System.getProperties())
+        suites "/src/test/resources/${suite}.xml"
+        threadCount(threads.toInteger())
     }
 }
