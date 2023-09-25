@@ -13,3 +13,6 @@ To see a test report after passing tests, you need following the instruction:
 - Run tests (when tests finish you will see a new folder 'build' inside a project, inside 'build' folder you will see 'allure-results' folder)
 
 - Change your directory into 'build' and run a command `allure serve` in command line (report will be formed automatically)
+
+Screenshots will be automatically added to failed steps
+![img.png](src/test/resources/failed_example.png)
